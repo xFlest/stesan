@@ -1,4 +1,4 @@
-const {src, dest, task} = require("gulp")
+const gulp = require("gulp")
 const sass = require("gulp-sass")
 const pug = require("gulp-pug")
 
@@ -10,11 +10,11 @@ const paths = {
   'html': 'dist/'
 }
 
-gulp.task('build', ['pug', 'sss'])
+gulp.task('build', ['pug', 'sass'])
 
 gulp.task('pug', () => {
-  return src(paths.pug + '**/*.pug').pipe(pug({pretty: true})).pipe(dest(paths.html))
+  return gulp.src(paths.pug + '**/*.pug').pipe(pug({pretty: true})).pipe(gulp.dest(paths.html))
 })
 gulp.task('sass', () => {
-  return src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(dest(paths.css))
+  return gulp.src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(gulp.dest(paths.css))
 })
