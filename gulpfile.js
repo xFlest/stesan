@@ -4,7 +4,7 @@ const pug = require("gulp-pug")
 
 const paths = {
   'root': '.',
-  'scss': 'src/style/',
+  'scss': 'src/scss/',
   'pug': 'src/pug/',
   'css': 'dist/css/',
   'html': 'dist/'
