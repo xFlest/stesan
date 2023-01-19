@@ -10,7 +10,7 @@ const paths = {
   'html': 'dist/'
 }
 
-gulp.task('build', ['pug', 'scss'])
+gulp.task('build', ['pug', 'sass'])
 
 gulp.task('pug', () => {
   return src(paths.pug + '**/*.pug').pipe(pug({pretty: true})).pipe(dest(paths.html))
