@@ -1,0 +1,14 @@
+{
+  "name": "stesan",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/xFlest/stesan.git",
+  "author": "xFlest",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.27.11",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0"
+  }
+}
