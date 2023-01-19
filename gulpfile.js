@@ -10,11 +10,11 @@ const paths = {
   'html': 'dist/'
 }
 
-gulp.task('build', ['pug', 'sass'])
-
-gulp.task('pug', () => {
-  return src(paths.pug + '**/*.pug').pipe(pug({pretty: true})).pipe(dest(paths.html))
-})
-gulp.task('sass', () => {
-  return src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(dest(paths.css))
-})
+gulp.task('build', [
+  gulp.task('pug', () => {
+    return src(paths.pug + '**/*.pug').pipe(pug({pretty: true})).pipe(dest(paths.html))
+  }),
+  gulp.task('sass', () => {
+    return src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(dest(paths.css))
+  })
+])
