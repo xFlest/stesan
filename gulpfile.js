@@ -20,8 +20,8 @@ gulp.task('sass', () => {
   return gulp.src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(gulp.dest(paths.style))
 })
 gulp.task('ts', () => {
-  return gulp.src(paths.ts + '**/*.ts').pipe(typescript()).js.pipe(gulp.dest('paths.script'))
+  return gulp.src(paths.ts + '**/*.ts').pipe(typescript()).pipe(gulp.dest('paths.script'))
 })
 
 
-gulp.task('build', gulp.series(gulp.parallel('pug', 'sass')))
+gulp.task('build', gulp.series(gulp.parallel('pug', 'sass', 'ts')))
