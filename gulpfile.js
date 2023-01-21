@@ -1,13 +1,15 @@
 const gulp = require("gulp")
 const sass = require("gulp-sass")(require('sass'))
 const pug = require("gulp-pug")
-const browserSync = require("browser-sync")  
+const typescript = require("gulp-typescript")
 
 const paths = {
   'root': '/dist/',
   'scss': '/src/scss/',
   'pug': '/src/pug/',
+  'ts': '/src/ts/',
   'style': '/dist/css/',
+  'script': '/dist/script/'
 }
 
 
@@ -16,6 +18,9 @@ gulp.task('pug', () => {
 })
 gulp.task('sass', () => {
   return gulp.src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(gulp.dest(paths.style))
+})
+gulp.task('ts', () => {
+  return gulp.src(paths.ts + '**/*.ts').pipe(typescript()).js.pipe(gulp.dest('paths.script'))
 })
 
 

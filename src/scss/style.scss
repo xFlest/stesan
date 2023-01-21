@@ -26,14 +26,13 @@
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px;
+  height: 64vmin;
+  aspect-ratio: 1;
 }
 .stesan > div {
   width: 100%;
   aspect-ratio: 1;
   transition: border-radius ease 1s;
-}
-.stesan:hover > div {
-  border-radius: 100%;
 }
 .stesan__1 {
   background-color: var(--g1);
@@ -122,7 +121,6 @@
 .stesan__41,
 .stesan__48 {
   background-color: var(--r);
-  animation: rainbow 2s linear infinite;
 }
 .stesan__42,
 .stesan__47 {
@@ -148,11 +146,12 @@
 .stesan__63 {
   background-color: var(--p3);
 }
-
-@keyframes rainbow {
-  from {
-    filter: hue-rotate(0deg);
-  } to {
-    filter: hue-rotate(360deg)
-  }
+body {
+  width: 100vw;
+  height: 100svh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
 }
