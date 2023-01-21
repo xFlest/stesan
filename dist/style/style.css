@@ -24,20 +24,24 @@
   --b7: #50230B;
   --p3: #FEF1DF;
   display: grid;
-  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px;
 }
+
 .stesan > div {
   width: 100%;
   aspect-ratio: 1;
   transition: border-radius ease 1s;
 }
+
 .stesan:hover > div {
   border-radius: 100%;
 }
+
 .stesan__1 {
   background-color: var(--g1);
 }
+
 .stesan__2,
 .stesan__3,
 .stesan__6,
@@ -52,61 +56,76 @@
 .stesan__30 {
   background-color: var(--b);
 }
+
 .stesan__4 {
   background-color: var(--g2);
 }
+
 .stesan__5,
 .stesan__16 {
   background-color: var(--w1);
 }
+
 .stesan__8,
 .stesan__23 {
   background-color: var(--g3);
 }
+
 .stesan__9,
 .stesan__18 {
   background-color: var(--g4);
 }
+
 .stesan__10,
 .stesan__28 {
   background-color: var(--g5);
 }
+
 .stesan__11,
 .stesan__14 {
   background-color: var(--g6);
 }
+
 .stesan__15,
 .stesan__32 {
   background-color: var(--g7);
 }
+
 .stesan__17,
 .stesan__25,
 .stesan__26,
 .stesan__29 {
   background-color: var(--g8);
 }
+
 .stesan__24 {
   background-color: var(--w2);
 }
+
 .stesan__31 {
   background-color: var(--g9);
 }
+
 .stesan__33,
 .stesan__40,
 .stesan__49,
 .stesan__56 {
   background-color: var(--w3);
 }
+
 .stesan__34 {
   background-color: var(--b1);
 }
+
 .stesan__35 {
   background-color: var(--b2);
 }
+
 .stesan__36,
 .stesan__38 {
   background-color: var(--b3);
 }
+
 .stesan__37,
 .stesan__43,
 .stesan__44,
@@ -116,30 +135,38 @@
 .stesan__54 {
   background-color: var(--p1);
 }
+
 .stesan__39 {
   background-color: var(--b4);
 }
+
 .stesan__41,
 .stesan__48 {
   background-color: var(--r);
-  animation: rainbow 2s linear infinite;
+  -webkit-animation: rainbow 2s linear infinite;
+          animation: rainbow 2s linear infinite;
 }
+
 .stesan__42,
 .stesan__47 {
   background-color: var(--b5);
 }
+
 .stesan__50,
 .stesan__55 {
   background-color: var(--b6);
 }
+
 .stesan__52,
 .stesan__53 {
   background-color: var(--p2);
 }
+
 .stesan__57,
 .stesan__64 {
   background-color: var(--b7);
 }
+
 .stesan__58,
 .stesan__59,
 .stesan__60,
@@ -149,10 +176,20 @@
   background-color: var(--p3);
 }
 
+@-webkit-keyframes rainbow {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
 @keyframes rainbow {
   from {
     filter: hue-rotate(0deg);
-  } to {
-    filter: hue-rotate(360deg)
+  }
+  to {
+    filter: hue-rotate(360deg);
   }
 }
