@@ -4,12 +4,12 @@ const pug = require("gulp-pug")
 const typescript = require("gulp-typescript")
 
 const paths = {
-  'root': '/dist/',
-  'scss': '/src/scss/',
-  'pug': '/src/pug/',
-  'ts': '/src/ts/',
-  'style': '/dist/css/',
-  'script': '/dist/script/'
+  'root': 'dist/',
+  'scss': 'src/scss/',
+  'pug': 'src/pug/',
+  'ts': 'src/ts/',
+  'style': 'dist/css/',
+  'script': 'dist/script/'
 }
 
 
