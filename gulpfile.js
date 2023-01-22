@@ -17,9 +17,6 @@ gulp.task('pug', () => {
 gulp.task('sass', () => {
   return gulp.src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(gulp.dest(paths.root))
 })
-gulp.task('ts', () => {
-  return gulp.src(paths.ts + '**/*.ts').pipe(typescript({module: 'commonjs'})).pipe(gulp.dest(paths.root))
-})
 
 
-gulp.task('build', gulp.series(gulp.parallel('pug', 'sass', 'ts')))
+gulp.task('build', gulp.series(gulp.parallel('pug', 'sass')))
