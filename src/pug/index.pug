@@ -4,9 +4,9 @@ html(lang="ja")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title stesan
-    link(rel="stylesheet", href="style/style.css")
+    link(rel="stylesheet", href="style.css")
   body(onmousemove="rotateStesan(event)")
     .stesan
       - for (var i = 1; i <= 64; i++)
         div(class=`stesan__${i}`)
-    script(src="script/main.js") 
+    script(src="main.js") 
