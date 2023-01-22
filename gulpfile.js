@@ -1,13 +1,12 @@
 const gulp = require("gulp")
 const sass = require("gulp-sass")(require('sass'))
 const pug = require("gulp-pug")
-const typescript = require("gulp-typescript")
 
 const paths = {
   'root': 'dist/',
   'scss': 'src/scss/',
   'pug': 'src/pug/',
-  'ts': 'src/ts/',
+  'js': 'src/js/',
 }
 
 
@@ -17,6 +16,9 @@ gulp.task('pug', () => {
 gulp.task('sass', () => {
   return gulp.src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(gulp.dest(paths.root))
 })
+gulp.task('js', () => {
+  return gulp.src(paths.js + '**/*.js').pipe(gulp.dest(paths.root))
+})
 
 
-gulp.task('build', gulp.series(gulp.parallel('pug', 'sass')))
+gulp.task('build', gulp.series(gulp.parallel('pug', 'sass', 'js')))

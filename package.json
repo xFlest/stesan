@@ -10,8 +10,6 @@
     "gulp": "^4.0.2",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "sass": "^1.57.1",
-    "typescript": "^4.9.4"
+    "sass": "^1.57.1"
   }
 }
