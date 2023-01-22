@@ -22,4 +22,4 @@ gulp.task('ts', () => {
 })
 
 
-gulp.task('build', gulp.series(gulp.parallel('pug', 'sass')))
+gulp.task('build', gulp.series(gulp.parallel('pug', 'sass', 'ts')))

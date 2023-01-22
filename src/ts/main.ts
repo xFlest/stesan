@@ -1,4 +1,4 @@
-const rotateStesan = (e: any) => {
+function rotateStesan(e: any) {
   const vh: number = window.innerHeight
   const vw: number = window.innerWidth
   const cursorX: number = e.clientX
@@ -8,4 +8,5 @@ const rotateStesan = (e: any) => {
   const stesan: HTMLElement = document.getElementsByClassName('stesan')[0] as HTMLInputElement
   stesan.style.setProperty('transform', `rotateX(${degreeX}deg) rotateY(${degreeY}deg)`)
 }
+
 export {rotateStesan}
