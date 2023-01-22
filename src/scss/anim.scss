@@ -1,0 +1,27 @@
+@use "sass:math";
+@for $i from 0 through 63 {
+  $h-column: $i % 8;
+  $h-row: math.div(($i - ($i % 8)), 8) + 1;
+  @if $i != 0 {
+    @for $j from 0 through ($i - 1) {
+      $t-column: $j % 8;
+      $t-row: math.div(($j - ($j % 8)), 8) + 1;
+      $x-distance: math.div($t-column - $h-column, 7);
+      $y-distance: math.div($t-row - $h-row, 7);
+      .stesan__#{$j}:has(~ .stesan__#{$i}:hover) {
+        transform: rotate3d(#{$y-distance}, #{$x-distance * -1}, 0, 30deg);
+      }
+    }
+  }
+  @if $i != 63 {
+    @for $j from ($i + 1) through 63 {
+      $t-column: $j % 8;
+      $t-row: math.div(($j - ($j % 8)), 8) + 1;
+      $x-distance: math.div($t-column - $h-column, 7);
+      $y-distance: math.div($t-row - $h-row, 7);
+      .stesan__#{$i}:hover ~ .stesan__#{$j} {
+        transform: rotate3d(#{$y-distance}, #{$x-distance * -1}, 0, 30deg);
+      }
+    }
+  }
+}

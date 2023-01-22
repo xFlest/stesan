@@ -5,10 +5,9 @@ html(lang="ja")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title stesan
     link(rel="stylesheet", href="style.css")
+    link(rel="stylesheet", href="anim.css")
   body(onmousemove="rotateStesan(event)")
     .stesan
-      - for (var i = 1; i <= 64; i++)
-        - var column = i % 8
-        - var row = (i - (i % 8)) / 8 +1
-        div(class=`stesan__${i} r__${row} c__${column}`)
+      - for (var i = 0; i < 64; i++)
+        div(class=`stesan__${i}`)
     script(src="main.js") 
