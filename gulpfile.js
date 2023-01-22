@@ -18,7 +18,7 @@ gulp.task('sass', () => {
   return gulp.src(paths.scss + '**/*.scss').pipe(sass({outputStyle: 'expanded'})).pipe(gulp.dest(paths.root))
 })
 gulp.task('ts', () => {
-  return gulp.src(paths.ts + '**/*.ts').pipe(typescript()).pipe(gulp.dest(paths.root))
+  return gulp.src(paths.ts + '**/*.ts').pipe(typescript({module: 'commonjs'})).pipe(gulp.dest(paths.root))
 })
 
 
