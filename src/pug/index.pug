@@ -8,7 +8,7 @@ html(lang="ja")
     link(rel="stylesheet", href="anim.css")
   body(onmousemove="rotateStesan(event)")
     .stesan
-      - for (var i = 0; i < 63; i++)
+      - for (var i = 0; i < 64; i++)
         - var column = i % 8
         - var row = (i - (i % 8)) / 8 +1
         div(class=`stesan__${i}`)
