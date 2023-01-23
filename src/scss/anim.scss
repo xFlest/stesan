@@ -10,12 +10,12 @@
     $distance: math.sqrt(math.pow($x-distance, 2) + math.pow($y-distance, 2));
     @if $j < $i {
       .stesan__#{$j}:has(~ .stesan__#{$i}:hover) {
-        animation-delay: $distance * 0.1s;
+        animation-delay: $distance * .7s;
       }
     }
     @if $j > $i {
       .stesan__#{$i}:hover ~ .stesan__#{$j} {
-        animation-delay: $distance * 0.1s;
+        animation-delay: $distance * .7s;
       }
     }
   }
@@ -32,6 +32,7 @@
   }
 }
 .stesan > div:active ~ div,
-.stesan > div:has(~ div:active) {
-  animation: a .8s ease-out;
+.stesan > div:has(~ div:active),
+.stesan > div:active {
+  animation: a .8s ease-out ;
 }

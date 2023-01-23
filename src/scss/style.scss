@@ -26,9 +26,8 @@
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px;
-  height: 384px;
+  height: 64vmin;
   aspect-ratio: 1;
-  perspective: 40px;
 }
 .stesan > div {
   width: 100%;
@@ -40,11 +39,11 @@
 }
 .stesan__1,
 .stesan__2,
-.stesan__4,
+.stesan__5,
 .stesan__6,
 .stesan__11,
 .stesan__12,
-.stesan__17,
+.stesan__18,
 .stesan__19,
 .stesan__20,
 .stesan__21,
