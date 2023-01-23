@@ -31,6 +31,7 @@
     transform: scale(1);
   }
 }
-.stesan > div:active {
+.stesan > div:active ~ div,
+.stesan > div:has(~ div:active) {
   animation: a .8s ease-out;
 }
