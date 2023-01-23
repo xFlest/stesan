@@ -2,26 +2,35 @@
 @for $i from 0 through 63 {
   $h-column: $i % 8;
   $h-row: math.div(($i - ($i % 8)), 8) + 1;
-  @if $i != 0 {
-    @for $j from 0 through ($i - 1) {
-      $t-column: $j % 8;
-      $t-row: math.div(($j - ($j % 8)), 8) + 1;
-      $x-distance: math.div($t-column - $h-column, 7);
-      $y-distance: math.div($t-row - $h-row, 7);
+  @for $j from 0 through 63 {
+    $t-column: $j % 8;
+    $t-row: math.div(($j - ($j % 8)), 8) + 1;
+    $x-distance: math.div($t-column - $h-column, 7);
+    $y-distance: math.div($t-row - $h-row, 7);
+    $distance: math.sqrt(math.pow($x-distance, 2) + math.pow($y-distance, 2));
+    @if $j < $i {
       .stesan__#{$j}:has(~ .stesan__#{$i}:hover) {
-        transform: rotate3d(#{$y-distance}, #{$x-distance * -1}, 0, 30deg);
+        animation-delay: $distance * 0.1s;
       }
     }
-  }
-  @if $i != 63 {
-    @for $j from ($i + 1) through 63 {
-      $t-column: $j % 8;
-      $t-row: math.div(($j - ($j % 8)), 8) + 1;
-      $x-distance: math.div($t-column - $h-column, 7);
-      $y-distance: math.div($t-row - $h-row, 7);
+    @if $j > $i {
       .stesan__#{$i}:hover ~ .stesan__#{$j} {
-        transform: rotate3d(#{$y-distance}, #{$x-distance * -1}, 0, 30deg);
+        animation-delay: $distance * 0.1s;
       }
     }
   }
+}
+@keyframes a {
+  0% {
+    transform: scale(1);
+  } 25% {
+    transform: scale(.7);
+  } 75% {
+    transform: scale(1.2);
+  } 100% {
+    transform: scale(1);
+  }
+}
+.stesan > div:active {
+  animation: a .8s ease-out;
 }
