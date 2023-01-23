@@ -22,17 +22,17 @@
 }
 @keyframes a {
   0% {
-    transform: scale(1);
+    transform: translateZ(0px);
   } 25% {
-    transform: scale(.7);
+    transform: translateZ(-10px);
   } 75% {
-    transform: scale(1.2);
+    transform: translateZ(10px);
   } 100% {
-    transform: scale(1);
+    transform: translateZ(0px);
   }
 }
 .stesan > div:active ~ div,
 .stesan > div:has(~ div:active),
 .stesan > div:active {
-  animation: a .8s ease-out ;
+  animation: a .8s ease-in-out ;
 }
