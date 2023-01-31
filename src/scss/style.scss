@@ -28,7 +28,7 @@
   gap: 0px;
   height: 64vmin;
   aspect-ratio: 1;
-  perspective: 120px;
+  transition: transform ease .2s;
 }
 .stesan > div {
   width: 100%;

@@ -5,17 +5,17 @@
   @for $j from 0 through 63 {
     $t-column: $j % 8;
     $t-row: math.div(($j - ($j % 8)), 8) + 1;
-    $x-distance: math.div($t-column - $h-column, 7);
-    $y-distance: math.div($t-row - $h-row, 7);
+    $x-distance: $t-column - $h-column;
+    $y-distance: $t-row - $h-row;
     $distance: math.sqrt(math.pow($x-distance, 2) + math.pow($y-distance, 2));
     @if $j < $i {
       .stesan__#{$j}:has(~ .stesan__#{$i}:hover) {
-        animation-delay: $distance * .7s;
+        transition-delay: $distance * .1s;
       }
     }
     @if $j > $i {
       .stesan__#{$i}:hover ~ .stesan__#{$j} {
-        animation-delay: $distance * .7s;
+        transition-delay: $distance * .1s;
       }
     }
   }
@@ -34,5 +34,8 @@
 .stesan > div:active ~ div,
 .stesan > div:has(~ div:active),
 .stesan > div:active {
-  animation: a .8s ease-in-out ;
+  transform: rotateX(180deg);
+}
+.stesan > div {
+  transition: transform ease .3s;
 }
